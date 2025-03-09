@@ -1,0 +1,10 @@
+services:
+  api:
+    image: test
+    restart: always
+    environment:
+      - WEBMELDEN_USERNAME=<username>
+      - WEBMELDEN_PASSWORD=<password>
+      - CALDAV_USERNAME=<username>
+      - CALDAV_PASSWORD=<password>
+      - CALDAV_URL=https://<domain>/remote.php/dav/calendars/<username>
