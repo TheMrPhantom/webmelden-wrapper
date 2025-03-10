@@ -20,21 +20,16 @@ def get_caldav_events():
 
     # Send POST request to login
     response = session.post(login_url, data=payload, allow_redirects=True)
-    php_session_id = session.cookies["PHPSESSID"]
 
     # Check if login was successful by verifying session cookie
     if "PHPSESSID" in session.cookies.get_dict():
-        print("Login successful! PHPSESSID:", session.cookies["PHPSESSID"])
+        print("Login successful!")
     else:
         print("Login failed!")
 
     # Extract query params from the final redirected URL
     parsed_url = urlparse(response.url)  # Parse URL components
     query_params = parse_qs(parsed_url.query)  # Convert to dictionary
-
-    # Print the final URL and query parameters
-    print("Redirected URL:", response.url)
-    print("Query Parameters:", query_params)
 
 
     # Now access a protected page

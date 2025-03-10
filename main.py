@@ -1,11 +1,11 @@
 import event_factory
-import cdav
+import webmelden
 import schedule
 import time
 
 def import_webmelden_events():
     try:
-        events = cdav.get_caldav_events()
+        events = webmelden.get_caldav_events()
 
         # create events in calendar
         factory = event_factory.EventFactory()
